@@ -1,0 +1,22 @@
+{% extends 'Recetas/index.html' %}
+{% load static %}
+
+
+{% block principal %}
+
+<div >
+    <h2>Hola Recetas!</h2>
+    <img src="{% static  'Recetas/assets/recetas.jpg' %}"  height="400" width="500" alt="Foto">
+</div>
+
+<ul>
+        {% for n in nombres %}
+            <li>
+                {{n.nombre}} | {{n.grupo}} | {{n.receta}}
+                <a href="{% url 'recetas-detail' n.id %}">Detalle</a>
+                <a href="{% url 'recetas-update' n.id %}">Actualizar</a>
+                <a href="{% url 'recetas-delete' n.id %}">Borrar</a>
+            </li>
+        {% endfor %}
+</ul>
+{% endblock %}

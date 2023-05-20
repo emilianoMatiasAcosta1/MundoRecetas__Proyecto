@@ -1,0 +1,13 @@
+{% extends 'Recetas/index.html' %}
+
+{% block principal %}
+
+<h3 style="color:crimson">Estas seguro que desea borrar?</h3>
+<form method="post">
+    <input type="submit" value="Borrar"> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <a href="{% url 'recetas-list' %}">cancelar</a>
+</form>
+
+{% endblock %}

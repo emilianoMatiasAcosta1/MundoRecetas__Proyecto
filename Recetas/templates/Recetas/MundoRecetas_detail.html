@@ -1,0 +1,15 @@
+{% extends 'Recetas/index.html' %}
+
+{% block principal %}
+
+<h3 style="color: darkgreen;">! detAlle receta de {{nombre.nombre}}</h3>
+<p>
+<ul>
+    <li>{{nombre.id}}  |  {{nombre.nombre}}  |  {{nombre.receta}}  |  {{nombre.detalle}}
+        <a href="{% url 'recetas-update' nombre.id %}">Actualizar</a>
+        <a href="{% url 'recetas-delete' nombre.id %}">Borrar</a>
+    </li>
+</ul>
+</p>
+{% endblock %}
+
